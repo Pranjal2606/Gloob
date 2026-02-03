@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLOOB</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+  <style>
+    @keyframes blink {
+      0%, 90%, 100% { transform: scaleY(1); }
+      95% { transform: scaleY(0.1); }
+    }
+    .eye-blink {
+      animation: blink 4s infinite;
+    }
+    .sneaky-alien {
+      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+    .alien-wiggle {
+      animation: wiggle 1.5s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-25px); }
+    }
+    .alien-float {
+      animation: float 2.5s ease-in-out infinite;
+    }
+    @keyframes pulse-scale {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    .alien-pulse {
+      animation: pulse-scale 1.8s ease-in-out infinite;
+    }
+    
+    @keyframes ear-wiggle {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      25% { transform: scale(1.2) rotate(-15deg); }
+      75% { transform: scale(1.2) rotate(15deg); }
+    }
+    .alien-ear-wiggle {
+      animation: ear-wiggle 0.4s ease-in-out infinite;
+    }
+
+    /* Simple breathing animation for title */
+    @keyframes classic-breathe {
+      0%, 100% { 
+        transform: scale(1);
+        opacity: 0.95;
+      }
+      50% { 
+        transform: scale(1.02);
+        opacity: 1;
+      }
+    }
+
+    .title-glow {
+      display: inline-block;
+      animation: classic-breathe 4s ease-in-out infinite;
+      letter-spacing: 0.2em;
+    }
+
+    @keyframes eye-glow-pulse {
+      0%, 100% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); }
+      50% { box-shadow: 0 0 25px rgba(255, 255, 255, 1); }
+    }
+    .eye-glow {
+      animation: eye-glow-pulse 2s ease-in-out infinite;
+    }
+
+    /* Snow Animation */
+    @keyframes snowfall {
+      0% { transform: translateY(-10vh) translateX(0); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(110vh) translateX(20px); opacity: 0; }
+    }
+    .snowflake {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(1px);
+      animation: snowfall linear infinite;
+    }
+
+    .font-classic {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-slate-950 text-white overflow-hidden transition-colors duration-1000">
+  <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

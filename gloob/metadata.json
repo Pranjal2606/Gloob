@@ -1,0 +1,7 @@
+{
+  "name": "GLOOB",
+  "description": "A quirky autocorrect system featuring a sneaky purple alien that peeks from the edge of your screen to enhance your writing using AI.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
